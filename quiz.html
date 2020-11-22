@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js">
+		</script>
+		<style type="text/css">
+			
+			#quiz {
+
+	margin-left: 450px;
+	background: #d2def2;
+	padding: 10px 20px 10px 20px;
+	width: 500px;
+	border-radius: 20px;
+	float: left;
+	height: 400;
+	text-align: center;
+
+}
+
+input {
+	margin-left: 30px;
+
+	text-align: center;
+}
+
+
+
+
+#button {
+	background: blue;
+	border: none;
+	border-radius: 5px;
+	padding: 10px;
+	color: white;
+	font-size: 16px;
+	transition-duration: .5s;
+	margin-top: 20px;
+}
+#number_correct{
+	margin-top: 400px;
+	margin-left: 680px;
+}
+#message{
+
+	margin-left: 680px;
+}
+
+
+		</style>
+	<title></title>
+</head>
+<body>
+	<form id="quiz" name="quiz">
+
+ <h1>JORDAN</h1>
+        <p><h4>Q1:Which is the second largest in jorden?</h4></p>
+        <label><input type="radio" name="question1"  id="qu" value="1-Zarqa"> 1-Zarqa</label>
+        <label><input type="radio" name="question1"  id="qu" value="2-Irbid"> 2-Irbid</label>
+        <label><input type="radio" name="question1"  id="qu" value="3-Jarsh"> 3-Jarsh</label><br>
+        <p><h4>Q2:What is jordans moust populer sport?</h4></p>
+        <label ><input type="radio" name="question2"  id="qu" value="1-Tennis" > 1-Tennis</label>
+        <label ><input type="radio" name="question2"  id="qu" value="2-Football"> 2-Football</label>
+        <label ><input type="radio" name="question2"  id="qu" value="3-Hoky"> 3-Hoky</label><br>
+        <p><h4>Q3:What is national dish in Jordan?</h4></p>
+        <label><input type="radio" name="question3"  id="qu" value="1-Maqlopa"> 1-Maqlopa</label>
+        <label><input type="radio" name="question3"  id="qu" value="2-Mansaf"> 2-Mansaf</label>
+        <label><input type="radio" name="question3"  id="qu" value="3-Shawerma"> 3-Shawerma</label><br><br>
+        <input id = "button" type = "button" value = "END" onclick = "check();">
+    </form>
+    <br>
+     <p id = "number_correct" ></p>
+     <br>
+      <p id = "message"></p>
+
+<script type="text/javascript">
+
+	
+
+   function check()
+   {
+   var question1 = document.quiz.question1.value;
+  var question2 = document.quiz.question2.value;
+  var question3 = document.quiz.question3.value;
+  var correct = 0;
+
+
+  if (question1 == "2-Irbid") {
+    correct++;
+}
+  if (question2 == "2-Football") {
+    correct++;
+} 
+  if (question3 == "2-Mansaf") {
+    correct++;
+  }
+  var messages = ["Great job!", "That's just okay", "You really need to do better"];
+  var score;
+
+  if (correct == 0) {
+    score = 2;
+  }
+
+  if (correct > 0 && correct < 3) {
+    score = 1;
+  }
+
+  if (correct == 3) {
+    score = 0;
+  }
+
+    document.getElementById("message").innerHTML = messages[score];
+    document.getElementById("number_correct").innerHTML = "You got " + correct + " correct.";
+     }
+
+
+
+</script>
+
+</body>
+</html>
